@@ -14,5 +14,6 @@ public class CompOperator {
         r1 = 10 >= 9;
         System.out.println(r1);
 
+        .l.l
     }
 }
