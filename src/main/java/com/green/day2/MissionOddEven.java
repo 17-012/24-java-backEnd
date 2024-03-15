@@ -2,7 +2,7 @@ package com.green.day2;
 
 public class MissionOddEven {
     public static void main(String[] args) {
-        int num = 0;
+        int num;
 
         for (int i = 0; i < 100; i++) {
             num = (int)(Math.random() * 10) + 1;
