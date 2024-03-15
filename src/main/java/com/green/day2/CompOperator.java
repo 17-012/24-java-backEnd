@@ -14,5 +14,14 @@ public class CompOperator {
         r1 = 10 >= 9;
         System.out.println(r1);
 
+        r1 = 10 <= 9;
+        System.out.println(r1);
+
+        r1 = 10 == 10;
+        System.out.println(r1);
+
+        r1 = 10 != 10;
+        System.out.println(r1);
+
     }
 }
