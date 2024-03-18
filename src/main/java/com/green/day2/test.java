@@ -44,10 +44,5 @@ public class test {
                 System.out.println(data3 + "->" + data1 + "->" + data2);
             }
         }
-        System.out.println("결과 값" + data1+"->"+data2+"->"+data3);
-
-
-
-
     }
 }
