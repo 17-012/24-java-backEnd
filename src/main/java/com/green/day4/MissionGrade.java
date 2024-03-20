@@ -2,7 +2,7 @@ package com.green.day4;
 
 public class MissionGrade {
     public static void main(String[] args) {
-        int score = (int)(Math.random()*101);
+        int score = (int)(Math.random()*101.0);
 
         System.out.println(score);
         if(score >= 90){
