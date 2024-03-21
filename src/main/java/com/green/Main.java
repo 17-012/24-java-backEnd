@@ -88,7 +88,7 @@ public class Main {
         }
 
         System.out.println("bubble");
-        int[] a = {8,7,5,9,4,1,3};
+        int[] a = {9,1,5,9,4,1,3};
 
         for (int j : a) {
             System.out.print(j + " ");
