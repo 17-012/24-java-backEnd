@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FlowEx25 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("숫자를 입력하세요 => ");
+        System.out.print("숫자를 입력하세요 => ");
         long input = scanner.nextLong();
         int sum=0;
         while (input != 0){
