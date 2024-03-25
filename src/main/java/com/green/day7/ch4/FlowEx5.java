@@ -26,7 +26,7 @@ public class FlowEx5 {
                     detail = "";
                 }
             }
-        } else if (input % 10 <= 6 && input % 10 >= 3) {
+        } else if (input % 10 >= 3) {
             detail = "0";
             if (input >= 90) {
                 grade = "A";

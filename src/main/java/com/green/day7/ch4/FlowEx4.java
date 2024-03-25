@@ -7,6 +7,7 @@ public class FlowEx4 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("점수를 입력해 주세요 ==> ");
         int input = scanner.nextInt();
+        scanner.close();
         System.out.println("점수는 : " + input);
         String grade = switch (input / 10) {
             case 10, 9 -> "A";
