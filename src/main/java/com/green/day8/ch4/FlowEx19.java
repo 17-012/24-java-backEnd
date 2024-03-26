@@ -2,6 +2,7 @@ package com.green.day8.ch4;
 
 public class FlowEx19 {
     public static void main(String[] args) {
+
         int st = 1, nd = 1, rd = 1;
         for (; st < 4; rd++) {
             if (rd == 4) {
