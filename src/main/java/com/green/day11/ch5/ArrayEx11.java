@@ -25,6 +25,5 @@ public class ArrayEx11 {
         }
 
         System.out.println(Arrays.toString(counterArr));
-
     }
 }
