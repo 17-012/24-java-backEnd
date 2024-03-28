@@ -1,7 +1,7 @@
 package com.green.day11.ch6;
 
 public class ObjectStudy1 {
-    public static void main(String[] args) {
-        int a;
-    }
+//        객체 생성
+//        클래스명 변수명 = new 클래스명();
+
 }
