@@ -6,6 +6,7 @@ public class MyMethodTest {
             System.out.printf("%d * %d = %d\n", num, i, num * i);
         }
     }
+
     public static void main(String[] args) {
         MyMethod myMethod = new MyMethod();
 
@@ -48,7 +49,7 @@ public class MyMethodTest {
         randomValue2 = myMethod.getRandomValue(5, 31);
         System.out.println(randomValue2);
 
-
+        myMethod.printGugudan(3, 7);
 
 
     }
@@ -67,9 +68,10 @@ class MyMethod {
     int getRandomValue(int input) {
         return (int) (Math.random() * input);
     }
+
     int getRandomValue(int min, int max) {
-        int range = max-min;
-        int data = (int)(Math.random()*range) + min;
+        int range = max - min;
+        int data = (int) (Math.random() * range) + min;
         return data;
     }
 
@@ -79,4 +81,12 @@ class MyMethod {
         }
     }
 
+    void printGugudan(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            for (int j = 1; j < 10; j++) {
+                System.out.printf("%d * %d = %d\n", i, j, i * j);
+            }
+            System.out.println();
+        }
+    }
 }
