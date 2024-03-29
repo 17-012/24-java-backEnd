@@ -20,5 +20,6 @@ public class TvTest4 {
         for (Tv tv : tvArr) {
             System.out.println(tv.channel);
         }
+
     }
 }
