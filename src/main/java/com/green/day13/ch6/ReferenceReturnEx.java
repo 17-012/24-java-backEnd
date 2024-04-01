@@ -15,9 +15,7 @@ public class ReferenceReturnEx {
         System.out.printf("numBox.num : %d\n", numBox2.num);
     }
 
-
-
-    public static NumBox myCopy(NumBox numBox){
+    public static NumBox myCopy(NumBox numBox) {
         NumBox temp = new NumBox();
         temp.num = numBox.num;
         return temp;
