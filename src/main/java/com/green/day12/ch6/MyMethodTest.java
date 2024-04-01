@@ -47,10 +47,11 @@ public class MyMethodTest {
         System.out.println(randomValue2);
 
         randomValue2 = myMethod.getRandomValue(5, 31);
+
         System.out.println(randomValue2);
+        System.out.println("-----------------------");
 
-        myMethod.printGugudan(3, 7);
-
+        myMethod.printGugudan(3, 4);
 
     }
 }
