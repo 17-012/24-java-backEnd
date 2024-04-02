@@ -5,6 +5,7 @@ public class ReferenceReturnEx {
         NumBox numBox = new NumBox();
         numBox.num = 10;
         NumBox numBox2 = myCopy(numBox);
+
         System.out.printf("numBox.num : %d\n", numBox.num);
         System.out.printf("numBox.num : %d\n", numBox2.num);
 

@@ -11,15 +11,6 @@ public class ConstructorTest {
         System.out.println(data2_1.value);
     }
 }
-
-class Data1 {
-    int value;
-
-    public Data1() {
-        System.out.println("Data1 생성자 호출");
-    }
-}
-
 class Data2 {
     int value;
 
@@ -31,3 +22,12 @@ class Data2 {
         value = param;
     }
 }
+
+class Data1 {
+    int value;
+
+    public Data1() {
+        System.out.println("Data1 생성자 호출");
+    }
+}
+

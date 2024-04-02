@@ -4,13 +4,10 @@ import java.util.Arrays;
 
 public class CardTest {
     public static void main(String[] args) {
-        //클로버, 하트, 스페이드, 다이아몬드
-        //숫자 2~10 , AJQK
-
         Card[] cards = new Card[52];
         String[] shapes = {"Heart", "Diamond", "Clova", "Spade"};
-        int idx = 0;
-        for (int i = 0; i < shapes.length; i++) {
+
+        for (int i = 0, idx = 0; i < shapes.length; i++) {
             for (int j = 1; j <= 13; j++, idx++) {
                 cards[idx] = new Card();
                 cards[idx].shape = shapes[i];
