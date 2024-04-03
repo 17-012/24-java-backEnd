@@ -26,8 +26,6 @@ public class CarTest {
                 "Door : %s\n", car4.color, car4.gearType, car4.door);
 
         System.out.println("----------------------");
-
-
     }
 }
 
@@ -42,7 +40,6 @@ class Car {
 //        door = 5;
 //         Car ( "red" , "manual" , 5 ) 인 바로 아래 생성자 호출
         this("red", "manual", 5);
-
     }
 
     public Car(Car input) {
