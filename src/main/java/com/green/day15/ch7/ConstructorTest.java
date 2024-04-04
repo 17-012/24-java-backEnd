@@ -21,7 +21,8 @@ class Tiger extends Animal {
         super(age);
         this.name = name;
     }
-    Tiger(int age){
+
+    Tiger(int age) {
         super(age);
     }
 }
