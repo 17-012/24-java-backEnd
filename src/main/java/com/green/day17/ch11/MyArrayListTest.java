@@ -17,6 +17,7 @@ public class MyArrayListTest {
         System.out.println("size : " + size);
         System.out.println(list.get(3));
 
+
     }
 }
 
@@ -25,6 +26,16 @@ class MyArrayList {
 
     public MyArrayList() {
         arr = new int[0];
+    }
+
+    public void remove(int index){
+        int[] temp = new int[arr.length-1];
+        for (int i = 0, idx = 0; i < arr.length; i++, idx++) {
+            if(i == index){
+                continue;
+            }
+            temp[idx] = arr[i];
+        }
     }
 
     public int get(int index) {
