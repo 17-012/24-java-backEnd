@@ -23,22 +23,12 @@ public class Card {
         return result;
     }
 
-    public int getScore() {
+    public int getPoint() {
         int score = switch (denomination) {
             case "A" -> 1;
             case "J", "Q", "K" -> 10;
             default -> Integer.parseInt(denomination);
         };
         return score;
-    }
-}
-
-class CardTest {
-    public static void main(String[] args) {
-        Card c = new Card("Spade", "A");
-        System.out.println(c);
-
-        int score = c.getScore();
-        System.out.println(score);
     }
 }
