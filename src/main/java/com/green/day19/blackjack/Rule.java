@@ -7,9 +7,8 @@ public class Rule {
         int gamerPoint = point(gamer);
         int dealerPoint = point(dealer);
 
+
         System.out.println("========== 결과 ==========");
-
-
 
         System.out.println();
         System.out.println("System : 각자 카드를 오픈해 주세요");
@@ -17,13 +16,14 @@ public class Rule {
         System.out.println("gamer : " + gamer.openCards());
         System.out.println("dealer : " + dealer.openCards());
         System.out.println();
+
         System.out.println("gamerPoint : " + gamerPoint);
         System.out.println("dealerPoint : " + dealerPoint);
         System.out.println();
 
         if (gamerPoint == dealerPoint || (gamerPoint > OVER && dealerPoint > OVER)) {
             System.out.println("System : 게임을 비겼습니다.");
-        } else if (gamerPoint > dealerPoint || dealerPoint > OVER) {
+        } else if ((gamerPoint > dealerPoint && gamerPoint <= OVER) || dealerPoint > OVER ) {
             System.out.println("System : 게이머가 이겼습니다.");
         } else {
             System.out.println("System : 딜러가 이겼습니다.");
