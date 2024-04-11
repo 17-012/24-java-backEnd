@@ -65,8 +65,8 @@ class NumberBaseBallGame {
     }
 
     public void isB(int input) {
-        for (int i = 0; i < numArr.length; i++) {
-            if (input == numArr[i]) {
+        for (int j : numArr) {
+            if (input == j) {
                 this.B++;
                 break;
             }

@@ -1,8 +1,8 @@
 package com.green.day19.blackjack;
 
 public class Card {
-    private String pattern; // 무늬
-    private String denomination; // 숫자
+    private final String pattern; // 무늬
+    private final String denomination; // 숫자
 
     public Card(final String pattern, final String denomination) {
         this.pattern = pattern;
@@ -19,7 +19,7 @@ public class Card {
 
     @Override
     public String toString() {
-        String result = String.format("%s\t%s", pattern, denomination);
+        String result = String.format("%s(%s)", pattern, denomination);
         return result;
     }
 

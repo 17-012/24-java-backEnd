@@ -10,14 +10,4 @@ public class Dealer extends Gamer {
         }
         return score <= CAN_RECEIVE_POINT;
     }
-
-}
-
-class DealerTest {
-    public static void main(String[] args) {
-        Dealer dealer = new Dealer();
-        dealer.receiveCard(new Card("Heart", "A"));
-        dealer.receiveCard(new Card("Spade", "K"));
-        boolean answer = dealer.isMoreReceiveCard();
-    }
 }
