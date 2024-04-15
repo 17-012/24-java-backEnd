@@ -1,9 +1,6 @@
 package com.green.day22;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class MyConnection {
@@ -44,6 +41,17 @@ public class MyConnection {
             }
         }
         close(conn);
+    }
+
+    public void close(ResultSet rs, Statement stat, Connection conn) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        close(stat, conn);
     }
 }
 

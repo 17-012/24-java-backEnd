@@ -10,6 +10,20 @@ public class MemberEntity {
     private int height;
     private String debutDate;
 
+    @Override
+    public String toString() {
+        return "MemberEntity{" +
+                "memId='" + memId + '\'' +
+                ", memName='" + memName + '\'' +
+                ", memNumber=" + memNumber +
+                ", addr='" + addr + '\'' +
+                ", phone1='" + phone1 + '\'' +
+                ", phone2='" + phone2 + '\'' +
+                ", height=" + height +
+                ", debutDate='" + debutDate + '\'' +
+                '}';
+    }
+
     public String getMemId() {
         return memId;
     }
