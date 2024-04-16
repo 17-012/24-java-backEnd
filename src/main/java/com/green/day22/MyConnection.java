@@ -12,6 +12,7 @@ public class MyConnection {
     private final String PASSWORD = "green502";
 
     public Connection getConn() throws SQLException, ClassNotFoundException {
+//      url = jdbc:mariadb://localhost:3306/market_db
         String url = String.format("jdbc:mariadb://%s:%s/%s", HOST, PORT, DB_NAME);
         Class.forName(DRIVER);
         Connection conn = DriverManager.getConnection(url, USERNAME, PASSWORD);

@@ -13,20 +13,13 @@ public class MemberDao {
 
     public int execute(String sql) {
         int result = 0;
-        Connection conn = null;
-        Statement stat = null;
-        try {
-            conn = myConn.getConn();
-            stat = conn.createStatement();
-
+        try (Connection conn = myConn.getConn(); Statement stat = conn.createStatement()) {
             // 영향받은 행 갯수
             result = stat.executeUpdate(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        } finally {
-            myConn.close(stat, conn);
         }
         return result;
     }
@@ -79,6 +72,39 @@ public class MemberDao {
         return list;
     }
 
+    // select 문법 ( 1개 )
+    public MemberEntity selMember(String memId) {
+        MemberEntity entity = new MemberEntity();
+        String sql = String.format("SELECT mem_id, mem_name, mem_number, addr, phone1, phone2, height, debut_date" +
+                " FROM member" +
+                " WHERE mem_id = '%s'", memId);
+        System.out.println(sql);
+
+        try (Connection conn = myConn.getConn();
+             Statement stat = conn.createStatement();
+             ResultSet rs = stat.executeQuery(sql)
+        ) {
+            if (rs.next()) {
+                entity.setMemId(rs.getString("mem_id"));
+                entity.setMemName(rs.getString("mem_name"));
+                entity.setMemNumber(rs.getInt("mem_number"));
+                entity.setAddr(rs.getString("addr"));
+                entity.setPhone1(rs.getString("phone1"));
+                entity.setPhone2(rs.getString("phone2"));
+                entity.setHeight(rs.getInt("height"));
+                entity.setDebutDate(rs.getString("debut_date"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return entity;
+    }
+
+
     //update 문법
     public int updMember(MemberEntity entity) {
         String mid = "";
@@ -120,10 +146,13 @@ public class MemberDao {
 class MemberDaoSelectTest {
     public static void main(String[] args) {
         MemberDao memberDao = new MemberDao();
-        List<MemberEntity> list = memberDao.selMemberList();
-        for (MemberEntity entity : list) {
-            System.out.println(entity);
-        }
+//        List<MemberEntity> list = memberDao.selMemberList();
+//        for (MemberEntity entity : list) {
+//            System.out.println(entity);
+//        }
+
+        MemberEntity memberEntity = memberDao.selMember("NJS");
+        System.out.println(memberEntity);
     }
 }
 
