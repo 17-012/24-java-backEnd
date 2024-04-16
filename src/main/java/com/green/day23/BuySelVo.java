@@ -5,6 +5,14 @@ public class BuySelVo {
     private String memId;
     private int buyCount;
 
+    @Override
+    public String toString() {
+        return "BuySelVo{" +
+                "memId='" + memId + '\'' +
+                ", buyCount=" + buyCount +
+                '}' + '\n';
+    }
+
     public BuySelVo(String memId, int buyCount) {
         this.memId = memId;
         this.buyCount = buyCount;

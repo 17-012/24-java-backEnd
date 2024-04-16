@@ -4,6 +4,7 @@ import com.green.day22.MyConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,17 @@ public class BuyDao {
 
     public List<BuySelVo> selBuyGroupByMemId() {
         List<BuySelVo> list = new ArrayList<BuySelVo>();
-        String sql = "SELECT COUNT(amount) FROM buy GROUP BY mem_id";
+        String sql = "SELECT mem_id, COUNT(mem_id) AS buy_count FROM buy GROUP BY mem_id";
+
+        try (Connection conn = myConn.getConn(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                list.add(new BuySelVo(rs.getString("mem_id"), rs.getInt("buy_count")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         return list;
     }
 
@@ -104,7 +115,7 @@ class BuyDaoTest {
 //        affectedRow = buyDao.insBuy(entity);
 //        affectedRow = buyDao.updBuy(entity);
 //        affectedRow = buyDao.delBuy(16);
-
+        System.out.println(buyDao.selBuyGroupByMemId());
         System.out.printf("affectedRow : %d\n", affectedRow);
     }
 }
