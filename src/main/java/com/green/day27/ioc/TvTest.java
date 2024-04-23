@@ -8,7 +8,11 @@ public class TvTest {
 
         String tvName = "apple";
         String speakerName = "genelec";
-        String wooferName = "marten";
+        String wooferName = "hanil";
+
+//        String tvName = args[0];
+//        String speakerName = args[1];
+//        String wooferName = args[2];
 
         Tv tv = tvFactory.factory(tvName,speakerName,wooferName);
         tv.sound();
